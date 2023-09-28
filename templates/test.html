@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} Home {% endblock title %} 
+{% block slider %}
+<div class="banner" style="height: 100; width: 70">
+  <video autoplay muted loop class="tagline-video">
+    <source src="{% static 'images/v1.mp4' %}" type="video/mp4" />
+  </video>
+  <div class="overlay"></div>
+  <div class="banner-innner">
+    <div class="container">
+      <div class="row"></div>
+    </div>
+  </div>
+</div>
+{% endblock slider %} 
+{% block main %}
+<h2 class="text-center my-5">Products</h2>
+{% endblock main %}

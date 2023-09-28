@@ -1,0 +1,31 @@
+.navbar
+{  
+    background-color:#02363f;  /*whichever you want*/
+    opacity: 0.8;           /*0.5 determines transparency value*/ 
+    /* filter:(opacity=20);        */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.banner {
+	height:87vh;
+	position:relative;
+	width:100%;
+	overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 45px;
+
+}
+.banner video {
+    width: 100%;
+    position: absolute;
+    	overflow: hidden;
+}
+.banner-innner {
+    padding: 200px 0;
+}
+body{
+    padding-top: 50px;
+}
