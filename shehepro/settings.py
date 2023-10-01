@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from storages.backends.s3boto3 import S3Boto3Storage
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -144,3 +145,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AWS Settings
+AWS_ACCESS_KEY_ID = 'AKIA47MZQK457AWLW2FE'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'shehes3'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'ap-south-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Payments Settings
+RAZOR_KEY_ID = 'rzp_test_S78j3G6VDJHVvF'
+RAZOR_KEY_SECRET = 'dmHaD56WvuAnAfpUJ4cS5qCC'

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Home {% endblock title %} 
+
+{% block slider %}
+<div class="banner" style="height: 100;width: 70;" >
+  <video autoplay muted loop class="tagline-video" >
+   <source src="{% static 'images/v1.mp4' %}" type="video/mp4">
+ </video> <div class="overlay"></div>
+   <div class="banner-innner">
+   <div class="container">
+   <div class="row">
+  </div>
+ </div>
+ </div>
+ </div>	
+<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  
+  <div class="embed-responsive embed-responsive-21by9">
+    <iframe class="embed-responsive-item" src="{% static 'images/v1.mp4' %}" allowfullscreen></iframe>
+  </div>
+     <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/tonemilk.png' %}" class="d-block w-75" alt="..."> 
+        <video src="{% static 'v1.mp4' %}" class="object-fit-contain" autoplay></video>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/buffalo-ghee.png' %}" class="d-block w-75" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/cow-ghee.png' %}" class="d-block w-75" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button> 
+  </div> -->
+  {% endblock slider %}
+  {% block main %}
+  <h2 class="text-center my-5">Products</h2>
+  <div class="container-fluid mt-3">
+    <div class="row">
+  
+  
+      <!-- filter -->
+  
+      <div class="col-lg-3 mx-auto">
+        <div class="list-group">
+  
+          <a href="/" class="list-group-item list-group-item-action">All Products</a>
+  
+          {% for category in catetory1 %}
+          <a href="/?category={{category.encrypt_key}}"
+            class="list-group-item list-group-item-action">{{category.name}}</a>
+          {% endfor %}
+        </div>
+      </div>
+  
+      <!-- all products -->
+      <div id='products' class="col-lg-9 mx-auto">
+        <div class="row">
+          {% for product in products %}
+          <div class="col mb-4">
+          <a href="{%url 'product_details' product.encrypt_key %}" class="btn">
+          <div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
+            <img class="card-img-top" src="/media/{{product.product_image.url}}" alt="Card image cap" style="height: 200px;">
+            <div class="card-body">
+              <div>
+                            
+                <div class="fw-blod"><h4>{{product.title}}</h4></div>
+                <div class="fw-blod text-danger">
+                    Rs.{{product.discounted_price}}/-
+                    <small class="fw-light text-decoration-line-through">
+                        {{product.selling_price}}
+                    </small>
+                </div>   
+            </div>
+            </div>
+          </div>
+        </a>
+        </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+ <br><br><br>
+{% endblock main %}
+{% block info %}
+  <div class="container" >
+    <div class="row bg-success text-center p-5 text-white border-bottom shadow">
+        <h1>Products</h1>
+        <small class="fs-5">
+            Please don't skip this 1-minute read. I'm sorry to interrupt, but it will soon be too late to help us in this short fundraiser.
+            This Tuesday, 19 September, I humbly request you to reflect on the number of times you visited Wikipedia in 
+            the past year, the value you got from it, and whether you're able to contribute ₹ 25. 
+            
+        </small>
+    </div>
+    
+  </div>
+  <br><br><br>
+  {% endblock info %}
+

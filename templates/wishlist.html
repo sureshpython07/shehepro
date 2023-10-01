@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} wishlist {%endblock title %} 
+{% block main %} 
+
+<div class="container my-5">
+
+    <div class="row">
+         <div class="col-sm-9">
+            <div class="row">
+                {% for prod in wishlist %}
+                <div class="col text-center mb-4">
+                    <a href="{%url 'product_details' prod.encrypt_id %}" class="btn">
+                        <div>
+                            <img src="/media/{{prod.product.product_image}}" alt="" width="300px" height="200px"/>
+                            <div class="fw-blod">{{prod.product.title}}</div>
+                            <div class="fw-blod text-danger">
+                                Rs.{{prod.product.discounted_price}}/-
+                                <small class="fw-light text-decoration-line-through">
+                                    {{prod.product.selling_price}}
+                                </small>
+                            </div>    
+                        </div>
+                    </a>
+                </div>  
+                {% endfor %}          
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}

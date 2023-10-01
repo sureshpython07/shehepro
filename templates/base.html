@@ -34,14 +34,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            {% comment %} {%if request.user.is_authenticated %} {% endcomment %}
+            {%if request.user.is_authenticated %}
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="{%url 'home'%}"
-                >Home</a
-              >
+              <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -56,30 +51,168 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="#">Jeans </a>
+                  <a class="dropdown-item" href="{%url 'category' 'LJEANS'%}"
+                    >Jeans
+                  </a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"> Jeggings</a>
+                  <a class="dropdown-item" href="{%url 'category' 'LEGGING'%}"
+                    > Jeggings</a
+                  >
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Palazzos </a>
+                  <a class="dropdown-item" href="{%url 'category' 'PALAZZO'%}"
+                    >Palazzos
+                    </a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Shorts </a>
+                  <a class="dropdown-item" href="{%url 'category' 'SHORTS'%}"
+                    >Shorts
+                    </a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Skirts </a>
+                  <a class="dropdown-item" href="{%url 'category' 'SKIRT'%}"
+                    >Skirts
+                    </a
+                  >
                 </li>
               </ul>
             </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Men
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'SHIRT'%}"
+                    >Shirts</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'TRACKPANT'%}"
+                    >Track Pants</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'PANT'%}"
+                    >Pants</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'TROUSER'%}"
+                    >Trousers</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Kids
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'MILK'%}"
+                    >Milk</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'CURD'%}"
+                    >Curd</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'GHEE'%}"
+                    >Ghee</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Beauty & Health
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'MILK'%}"
+                    >Milk</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'CURD'%}"
+                    >Curd</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'GHEE'%}"
+                    >Ghee</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dairy Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'MILK'%}"
+                    >Milk</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'CURD'%}"
+                    >Curd</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{%url 'category' 'GHEE'%}"
+                    >Ghee</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'about'%}">About</a>
+            </li>
           </ul>
           <form class="d-flex" role="search" action="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              name="search"
-              placeholder="Search"
+            <input class="form-control me-2" type="search" name="search" placeholder="Search"
               aria-label="Search"
             />
             <button class="btn btn-outline-success" type="submit">
@@ -97,58 +230,65 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {% comment %} {{request.user}} {% endcomment %}
+                {{request.user}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="{%url 'profile'%}">Profile</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Change Password</a>
+                  <a class="dropdown-item" href="{%url 'password_change'%}"
+                    >Change Password</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Orders</a>
+                  <a class="dropdown-item" href="{%url 'orders'%}">Orders</a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <a class="dropdown-item" href="{%url 'logout'%}">Logout</a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                >Cart <span class="badge bg-danger"></span
+              <a class="nav-link" href="{%url 'showcart'%}"
+                >Cart
+                <span class="badge bg-danger"
+                  >{%if totalitem > 0 %}{{totalitem}}{%endif%}</span
+                ></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'wishlist'%}"> <span class="badge bg-warning"
+                ><i class="fas fa-heart fa-lg"></i>   {%if totalwishlist > 0 %}{{totalwishlist}}{%endif%}</span
               ></a>
             </li>
+            {%else%}
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="badge bg-warning"
-                  ><i class="fas fa-heart fa-lg"></i> </span
-              ></a>
-            </li>
-            {% comment %} {%else%} {% endcomment %}
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="{%url 'login'%}">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Registration</a>
+              <a class="nav-link" href="{%url 'registration'%}">Registration</a>
             </li>
 
-            {% comment %} {%endif%} {% endcomment %}
+            {%endif%}
           </ul>
         </div>
       </div>
     </nav>
+
+
   </header>
   <body>
-    {% block slider %}{% endblock slider %} {% block main %}{% endblock main %}
-    {% block info %}{% endblock info %} 
-    {% block payment-geteway %}
-    {% endblock payment-geteway %} {% block footer %}
+    
+    {% block slider %}{% endblock slider %} 
+    {% block main %}{% endblock main %} 
+    {% block info %}{% endblock info %}
+    {% block payment-geteway %}{% endblock payment-geteway %} 
+    {% block footer %}
 
     <footer
-      class="container-fluid fixed-bottom border-top text-center text-white p-2 mt5"
-      style="background-color: #02363f"
+      class="container-fluid fixed-bottom border-top text-center text-white p-2 mt5" style="background-color: #02363f;"
     >
       Copyrights : 2023 || Developed By Suresh Technology
     </footer>
@@ -163,5 +303,139 @@
     <!-- <script src="{% static 'js/jquery-3.7.1.js' %}"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      var options = {
+        key: "rzp_test_S78j3G6VDJHVvF", // Enter the Key ID generated from the Dashboard
+        amount: "{{razoramount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        currency: "INR",
+        name: "Suresh Technologies", //your business name
+        description: "Purchase Product",
+        image: "https://example.com/your_logo",
+        order_id: "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        handler: function (response) {
+          console.log("success");
+          var form = document.getElementById("myform");
+          //alert(form);
+          var c = form.elements["custid"].value;
+          //alert(c);
+          //alert(response.razorpay_payment_id);
+          //alert(response.razorpay_order_id);
+          //alert(response.razorpay_signature)
+          window.location.href = `http://localhost:8000/paymentdone?order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}&cust_id=${c}`;
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+      var rzp1 = new Razorpay(options);
+      rzp1.on("payment.failed", function (response) {
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+      });
+      document.getElementById("rzp-button1").onclick = function (e) {
+        rzp1.open();
+        e.preventDefault();
+      };
+    </script>
+
+    <script>
+
+        $(".plus-cart").click(function () {
+          console.log(this.parentNode.children[2]);
+          var id = $(this).attr("pid").toString();
+          var eml = this.parentNode.children[2];
+          console.log("iddddddd", id);
+          $.ajax({
+            type: "GET",
+            url: "/plus_cart",
+            data: {
+              prod_id: id,
+            },
+            success: function (data) {
+              console.log("data = ", data);
+              eml.innerText = data.quantity;
+              document.getElementById("amount").innerText = data.amount;
+              document.getElementById("totalamount").innerText = data.totalamount;
+              window.location.href = `http://localhost:8000/showcart`
+            },
+          });
+        });
+
+        $(".minus-cart").click(function () {
+          console.log(this.parentNode.children[2]);
+          var id = $(this).attr("pid").toString();
+          var eml = this.parentNode.children[2];
+          $.ajax({
+            type: "GET",
+            url: "/minus_cart",
+            data: {
+              prod_id: id,
+            },
+            success: function (data) {
+              console.log("data = ", data);
+              eml.innerText = data.quantity;
+              document.getElementById("amount").innerText = data.amount;
+              document.getElementById("totalamount").innerText = data.totalamount;
+              window.location.href = `http://localhost:8000/showcart`
+            },
+          });
+        });
+
+        $(".remove").click(function () {
+          var id = $(this).attr("pid").toString();
+          var eml = this;
+          $.ajax({
+            type: "GET",
+            url: "/remove_cart",
+            data: {
+              prod_id: id,
+            },
+            success: function (data) {
+              document.getElementById("amount").innerText = data.amount;
+              document.getElementById("totalamount").innerText = data.totalamount;
+              eml.parentNode.parentNode.parentNode.parentNode.remove();
+              window.location.href = `http://localhost:8000/showcart`
+            },
+          });
+        });
+
+
+
+      $('.plus-wishlist').click(function(){
+        var id = $(this).attr('pid').toString();
+        $.ajax({
+          type : 'GET',
+          url : '/plus_wishlist',
+          data :{
+            prod_id : id
+          },
+          success: function(data){
+            window.location.href = `http://localhost:8000/product_details/${id}`
+          }
+        })
+      })
+
+      $('.minus-wishlist').click(function(){
+        var id = $(this).attr('pid').toString();
+        $.ajax({
+          type : 'GET',
+          url : '/minus_wishlist',
+          data :{
+            prod_id : id
+          },
+          success: function(data){
+            window.location.href = `http://localhost:8000/product_details/${id}`
+          }
+        })
+      })
+    </script>
+    <script>
+    document.getElementById("custadd1").checked = true;
+  </script>
   </body>
 </html>
